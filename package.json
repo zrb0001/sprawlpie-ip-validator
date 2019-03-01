@@ -1,0 +1,26 @@
+{
+  "name": "ip-validator",
+  "version": "0.0.1",
+  "description": "A tiny ip format validator tool",
+  "main": "dist/es5/index.ts",
+  "typings": "src/index.d.ts",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --build tsconfig.esm.json",
+    "build:cjs": "tsc --build tsconfig.es5.json",
+    "prebuild": "rm -rf ./dist",
+    "test": "ava test/*.test.js",
+    "pretest": "npm run build"
+  },
+  "keywords": ["ip format", "validator"],
+  "author": {
+    "name": "Ruibin Zhang",
+    "email": "zrb0001@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^1.2.1",
+    "typescript": "^3.3.3333"
+  }
+}
